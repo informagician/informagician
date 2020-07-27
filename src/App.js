@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Main from './components/Main'
 // import Blog from './components/Blog'
 import Admin from './components/admin/Main'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import './components/styles/index.scss'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Route path='/dashboard'>
             <Admin />
           </Route>
-          <Route exact path='/'>
+          <Route path='/'>
             <Main />
           </Route>
         </Switch>

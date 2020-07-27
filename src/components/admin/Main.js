@@ -13,14 +13,16 @@ const Main = () => {
             <div className="mr-sidebar">
                 <Sidebar />
             </div>
-            <Switch>
-                <Route exact path='/dashboard'>
-                    <Dashboard />
-                </Route>
-                <Route exact path='/dashboard/new-article'>
-                    <New />
-                </Route>
-            </Switch>
+            <div className="mr-main" id="test">
+                <Switch>
+                    <Route exact path='/dashboard'>
+                        <Dashboard />
+                    </Route>
+                    <Route exact path='/dashboard/new-article'>
+                        <New />
+                    </Route>
+                </Switch>
+            </div>
         </div>
         </Router>
     )
