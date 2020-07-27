@@ -7,6 +7,6 @@ module.exports = {
 
 function list(){
 
-    return db.select('title','author','short','created_at')
+    return db.select('id','title','url','author','short','created_at')
         .from('articles')
 }
