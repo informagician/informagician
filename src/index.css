@@ -12,7 +12,14 @@ code {
     monospace;
 }
 
-.sidebar {
-  background-color: darkgray;
+.mr-row {
+  display: flex;
+  flex-direction: row;
+}
+.mr-sidebar {
+  width: 240px;
+  background-color: #003459;
   height: 100vh;
+  padding: 0.5rem 0.5rem 0 2rem;
+  color:white;
 }

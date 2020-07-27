@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 // import Nav from './components/Nav'
 import Main from './components/Main'
 // import Blog from './components/Blog'
-import Dashboard from './components/admin/Dashboard'
+import Admin from './components/admin/Main'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         {/* <Nav /> */}
         <Switch>
           <Route path='/dashboard'>
-            <Dashboard />
+            <Admin />
           </Route>
           <Route exact path='/'>
             <Main />
