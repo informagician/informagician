@@ -3,7 +3,9 @@ import axios from 'axios'
 
 const Blog = () => {
 
-    const [ articles, setArticles ] = useState() 
+    const [ articles, setArticles ] = useState()
+
+    document.title = 'Milo Rastgoo - Blog'
 
     useEffect(() => {
         axios.get(process.env.REACT_APP_API + 'articles')
