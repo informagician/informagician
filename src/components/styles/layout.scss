@@ -1,0 +1,18 @@
+.top {
+    width: 100wv;
+    height: 70px;
+}
+
+.container {
+    width: 960px;
+    height: 100%;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
