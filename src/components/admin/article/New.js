@@ -48,12 +48,12 @@ const New = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        // let url = article.title.toLowerCase().replace(' ','-')
-        let url = article.title
-        console.log('submitted',url)
-        axios.post(process.env.REACT_APP_API + 'articles/new')
+        console.log('submitted',article)
+        axios.post(process.env.REACT_APP_API + 'articles/new',article)
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
+
+        // Lorem ipsum is for long description and the story. I wonder how this wysiwig text editor will work!
     }
 
     console.log(article)

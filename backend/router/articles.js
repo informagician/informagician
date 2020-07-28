@@ -10,5 +10,16 @@ router.get('/',(req,res) => {
         .catch(err => console.log(err))
 })
 
+router.post('/new',(req,res) => {
+    let url = req.body.title
+    url = url.replace(/\s/g, '-').toLowerCase()
+    req.body.url = url
+    console.log(req.body)
+    Articles.create(req.body)
+        .then(article => {
+            res.status(201).json(article)
+        })
+        .catch(err => console.log(err))
+})
 
 module.exports = router
