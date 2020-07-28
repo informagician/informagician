@@ -10,6 +10,7 @@ function list(){
 
     return db.select('id','title','url','author','short','created_at')
         .from('articles')
+        .orderBy('created_at', 'desc')
 }
 
 function findById(id){
