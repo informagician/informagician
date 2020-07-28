@@ -9,11 +9,11 @@ const Main = () => {
 
     return(
         <Router>
-        <div className="mr-row">
-            <div className="mr-sidebar">
+        <div className="row">
+            <div className="sidebar">
                 <Sidebar />
             </div>
-            <div className="mr-main" id="test">
+            <div className="main">
                 <Switch>
                     <Route exact path='/dashboard'>
                         <Dashboard />

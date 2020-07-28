@@ -16,15 +16,13 @@ const Blog = () => {
 
     },[])
 
-    console.log(articles)
-
     return(
         <>
-        <h1>Blog</h1>
+        <h2>Blog</h2>
         {articles !== undefined && articles.map(article => (
             <article key={article.id}>
                 <a href={'blog/' + article.url}>
-                <h2>{article.title}</h2>
+                <h3>{article.title}</h3>
                 <p>{article.short}</p>
                 </a>
             </article>

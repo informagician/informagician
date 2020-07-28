@@ -10,17 +10,19 @@ const Main = () => {
     return (
         <Router>
             <Nav />
-            <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route path="/blog">
-                    <Blog />
-                </Route>
-                <Route path="/projects">
-                    <Static />
-                </Route>
-            </Switch>
+            <div className="container">
+                <Switch>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route path="/blog">
+                        <Blog />
+                    </Route>
+                    <Route path="/projects">
+                        <Static />
+                    </Route>
+                </Switch>
+            </div>
         </Router>
     )
 }
