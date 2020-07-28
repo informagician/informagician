@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 import Quill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
 
@@ -50,6 +51,9 @@ const New = () => {
         // let url = article.title.toLowerCase().replace(' ','-')
         let url = article.title
         console.log('submitted',url)
+        axios.post(process.env.REACT_APP_API + 'articles/new')
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
     }
 
     console.log(article)
