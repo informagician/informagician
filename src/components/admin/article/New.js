@@ -3,6 +3,8 @@ import axios from 'axios'
 import Quill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
 
+import { Editor } from '@tinymce/tinymce-react';
+
 const New = () => {
 
     const [ article, setArticle ] = useState({})
@@ -74,6 +76,21 @@ const New = () => {
             <input type="submit" value="submit"  />
             {/* <button onSubmit={() => handleSubmit()}>Submit</button> */}
         </form>
+        <Editor 
+            init={{
+                height: 500,
+                menubar: false,
+                plugins: [
+                  'advlist autolink lists link image charmap print preview anchor',
+                  'searchreplace visualblocks code fullscreen',
+                  'insertdatetime media table paste code help wordcount'
+                ],
+                toolbar:
+                  'undo redo | formatselect | bold italic backcolor | \
+                  alignleft aligncenter alignright alignjustify | \
+                  bullist numlist outdent indent | removeformat | image | help'
+              }}
+        />
         </>
     )
 }
