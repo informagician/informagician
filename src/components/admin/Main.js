@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Sidebar from './Sidebar'
 import Dashboard from './Dashboard'
 import New from './article/New'
+import Media from './Media'
 
 const Main = () => {
 
@@ -20,6 +21,9 @@ const Main = () => {
                     </Route>
                     <Route exact path='/dashboard/new-article'>
                         <New />
+                    </Route>
+                    <Route path="/dashboard/media">
+                        <Media />
                     </Route>
                 </Switch>
             </div>
