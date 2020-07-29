@@ -23,7 +23,8 @@ const Blog = () => {
             <article key={article.id}>
                 <a href={'blog/' + article.url}>
                 <h3>{article.title}</h3>
-                <p>{article.short}</p>
+                <div dangerouslySetInnerHTML={{__html: article.short}} />
+                {/* <p>{article.short}</p> */}
                 </a>
             </article>
         ))}

@@ -3,7 +3,9 @@ const db = require('../data/db-config')
 
 module.exports = {
     list,
-    create
+    create,
+    findById,
+    findByURL
 }
 
 function list(){
@@ -17,6 +19,13 @@ function findById(id){
     return db('articles')
         .select('*')
         .where({id})
+        .first()
+}
+
+function findByURL(url) {
+    return db('articles')
+        .select('*')
+        .where({url})
         .first()
 }
 
