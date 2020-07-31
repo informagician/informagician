@@ -37,14 +37,14 @@ const New = () => {
     const handleShort = html => {
         setArticle({
             ...article,
-            short: html
+            short: html.level.content
         })
     }
 
     const handleLong = html => {
         setArticle({
             ...article,
-            long: html
+            long: html.level.content
         })
     }
 
@@ -67,16 +67,30 @@ const New = () => {
             <label>Title:
                 <input type="text" name="title" onChange={handleChange} />
             </label>
-            <label>Short Description:
+            {/* <label>Short Description:
                 <Quill theme='snow' modules={modules} formats={formats} name="short" onChange={handleShort} />
-            </label>
-            <label>Long Description:
-                <Quill theme='snow' modules={modules} formats={formats} name="long" onChange={handleLong} />
-            </label>
+            </label> */}
             <input type="submit" value="submit"  />
             {/* <button onSubmit={() => handleSubmit()}>Submit</button> */}
         </form>
         <Editor 
+            onChange={handleShort}
+            init={{
+                height: 500,
+                menubar: false,
+                plugins: [
+                  'advlist autolink lists link image charmap print preview anchor',
+                  'searchreplace visualblocks code fullscreen',
+                  'insertdatetime media table paste code help wordcount'
+                ],
+                toolbar:
+                  'undo redo | formatselect | bold italic backcolor | \
+                  alignleft aligncenter alignright alignjustify | \
+                  bullist numlist outdent indent | removeformat | image | help'
+              }}
+        />
+        <Editor 
+            onChange={handleLong}
             init={{
                 height: 500,
                 menubar: false,
