@@ -15,7 +15,7 @@ const Article = () => {
                 setArticle(res.data)
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [id])
 
     return(
         <>

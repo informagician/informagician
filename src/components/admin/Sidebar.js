@@ -1,9 +1,7 @@
 import React from 'react'
-import { Route, Link, useParams } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 
 const Sidebar = () => {
-
-    let { path } = useParams()
 
     return (
         <>

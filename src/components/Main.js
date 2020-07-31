@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Nav from './Nav'
 import Home from './Home'
 import Blog from './Blog'
@@ -7,8 +7,6 @@ import Static from './Static'
 import Article from './Article'
 
 const Main = () => {
-
-    let { id } = useParams()
  
     return (
         <Router>
