@@ -10,7 +10,12 @@ const Media = () => {
     }
 
     const handleUpload = e => {
+        const data = new FormData()
+        data.append('file', file)
         console.log(file)
+        axios.post(process.env.REACT_APP_API + 'media', data)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
     }
 
     return (
