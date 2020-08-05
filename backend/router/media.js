@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const multer = require('multer')
+const db = require('../model/media')
 
 let storage = multer.diskStorage({
     destination:function(req,file,cb) {
@@ -24,6 +25,13 @@ router.post('/',(req,res) => {
     })
 })
 
+router.get('/',(req,res) => {
+    db.list()
+        .then(items => {
+            res.status(200).json(items)
+        })
+        .catch(err => console.log(err))
+})
 
 
 module.exports = router

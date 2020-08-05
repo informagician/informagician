@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const Media = () => {
 
     const [ file, setFile ] = useState()
+    const [ gallery, setGallery] = useState()
+
+    useEffect(() => {
+        
+    })
 
     const handleFile = e => {
         setFile(e.target.files[0])
@@ -23,6 +28,9 @@ const Media = () => {
             <h1>Media</h1>
             <input type="file" onChange={handleFile} />
             <input type="submit" value="Upload" onClick={handleUpload} />
+            <div className="gallery">
+                <div className="img"></div>
+            </div>
         </>
     )
 }
