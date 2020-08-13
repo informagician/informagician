@@ -18,6 +18,10 @@ const Sidebar = () => {
                 <Link to="/dashboard/media">Media</Link>
             </Route>
             <br />
+            <Route>
+                <Link to="/dashboard/users">Users</Link>
+            </Route>
+            <br />
             <a href="/">Logout</a>
         </>
     )

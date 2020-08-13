@@ -5,6 +5,7 @@ import Sidebar from './Sidebar'
 import Dashboard from './Dashboard'
 import New from './article/New'
 import Media from './Media'
+import ListUsers from './users/ListUsers'
 
 const Main = () => {
 
@@ -24,6 +25,9 @@ const Main = () => {
                     </Route>
                     <Route path="/dashboard/media">
                         <Media />
+                    </Route>
+                    <Route path="/dashboard/users">
+                        <ListUsers />
                     </Route>
                 </Switch>
             </div>
