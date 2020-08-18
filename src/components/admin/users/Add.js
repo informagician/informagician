@@ -21,6 +21,15 @@ const Add = () => {
     return (
         <>
             <h2>Add User</h2>
+            <label>Firstname:
+                <input type="text" name="firstname" onChange={handleChange} />
+            </label>
+            <label>Lastname:
+                <input type="text" name="lastname" onChange={handleChange} />
+            </label>
+            <label>Email:
+                <input type="text" name="email" onChange={handleChange} />
+            </label>
             <label>
                 Username:
                 <input type="text" name="username" onChange={handleChange} />
