@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+// import ListUsers from './ListUsers'
 
 const Add = () => {
 
@@ -20,6 +21,7 @@ const Add = () => {
 
     return (
         <>
+            {/* <ListUsers /> */}
             <h2>Add User</h2>
             <label>Firstname:
                 <input type="text" name="firstname" onChange={handleChange} />
