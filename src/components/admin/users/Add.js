@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-// import ListUsers from './ListUsers'
 
 const Add = () => {
 
@@ -13,15 +12,15 @@ const Add = () => {
         })
     }
 
-    const handleSubmit = e => {
-        axios.post()
+    const handleSubmit = () => {
+        console.log(user)
+        axios.post(process.env.REACT_APP_API + 'auth/add', user)
             .then(res => console.log(res))
             .catch(err => console.log(err))
     }
 
     return (
         <>
-            {/* <ListUsers /> */}
             <h2>Add User</h2>
             <label>Firstname:
                 <input type="text" name="firstname" onChange={handleChange} />
