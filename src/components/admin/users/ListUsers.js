@@ -8,12 +8,14 @@ const ListUsers = () => {
 
     useEffect(() => {
 
-        axios.get()
+        axios.get(process.env.REACT_APP_API + 'auth')
             .then(res => {
                 setList(res.data)
             })
             .catch(err => console.log(err))
-    })
+    },[])
+    console.log(list)
+
     return (
         <>
             <h2>Users</h2>

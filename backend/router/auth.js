@@ -5,7 +5,11 @@ const bcrypt = require('bcrypt')
 const restricted = require('../middleware/restricted')
 
 router.get('/', (req,res) => {
-    res.status(200).json({message:'success'})
+    Auth.list()
+        .then(users => {
+            res.status(200).json({message:users})
+        })
+        .catch(err => console.log(err))
 })
 
 router.post('/add', (req,res) => {
@@ -19,6 +23,7 @@ router.post('/add', (req,res) => {
 
 router.post('/login', (req,res) => {
     let userData = req.body
+    console.log(userData)
     Auth.login(userData)
         .then(user => {
             if(user && bcrypt.compareSync(userData.password, user.password)) {
@@ -31,6 +36,11 @@ router.post('/login', (req,res) => {
         .catch(err => {
             res.status(500).json({errorMessage: err})
         })
+})
+
+router.delete('/delete/:id', (req,res) => {
+    let id = req.params
+
 })
 
 module.exports = router
