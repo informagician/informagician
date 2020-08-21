@@ -17,6 +17,22 @@ router.post('/add', (req,res) => {
         .catch(err => console.log(err))
 })
 
+router.post('/login', (req,res) => {
+    let userData = req.body
+    Auth.login(userData)
+        .then(user => {
+            if(user && bcrypt.compareSync(userData.password, user.password)) {
+                const token = generateToken(user)
+                res.status(200).json({message:'You are logged in', token})
+            } else {
+                res.status(401).json({errorMessage: 'Invalid Username or Password'})
+            }
+        })
+        .catch(err => {
+            res.status(500).json({errorMessage: err})
+        })
+})
+
 module.exports = router
 
 function generateToken(user){

@@ -15,7 +15,9 @@ const Login = () => {
     const handleSubmit = () => {
 
         console.log(credential)
-        // axios.post()
+        axios.post(process.env.REACT_APP_API + 'auth/login', credential)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
     }
     return (
         <>

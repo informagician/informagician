@@ -2,7 +2,8 @@ const db = require('../data/db-config')
 
 module.exports = {
     list,
-    add
+    add,
+    login
 }
 
 function list() {
@@ -22,4 +23,11 @@ function findById(id){
     return db('users')
         .select('*')
         .where({id})
+}
+
+function login(user) {
+    return db('users')
+        .select('*')
+        .where({username:user.username})
+        .first()
 }
