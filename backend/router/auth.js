@@ -7,16 +7,17 @@ const restricted = require('../middleware/restricted')
 router.get('/', (req,res) => {
     Auth.list()
         .then(users => {
-            res.status(200).json({message:users})
+            res.status(200).json(users)
         })
         .catch(err => console.log(err))
 })
 
 router.post('/add', (req,res) => {
     let user = req.body
+    user.password = bcrypt.hashSync(user.password, 13)
     Auth.add(user)
         .then(user => {
-            res.status(200).json({message:`${user}`})
+            res.status(200).json(user)
         })
         .catch(err => console.log(err))
 })

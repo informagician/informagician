@@ -14,6 +14,7 @@ const ListUsers = () => {
             })
             .catch(err => console.log(err))
     },[])
+
     console.log(list)
 
     return (
@@ -29,7 +30,17 @@ const ListUsers = () => {
                         <th>Creation Date</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    {list.length > 0 && list.map(item => (
+                    <tr key={item.id}>
+                        <td>{item.id}</td>
+                        <td>{item.firstname}</td>
+                        <td>{item.lastname}</td>
+                        <td>{item.username}</td>
+                        <td>{item.created_at}</td>
+                    </tr>
+                    ))}
+                </tbody>
             </table>
             <Add />
         </>
