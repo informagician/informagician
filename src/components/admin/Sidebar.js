@@ -1,26 +1,27 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
+import PrivateRoute from '../PrivateRoute'
 
 const Sidebar = () => {
 
     return (
         <>
             <h2>Sidebar</h2>
-            <Route>
+            <PrivateRoute>
                 <Link to="/dashboard">Dashboard</Link>
-            </Route>
+            </PrivateRoute>
             <br/>
-            <Route>
+            <PrivateRoute>
                 <Link to="/dashboard/new-article">New Article</Link>
-            </Route>
+            </PrivateRoute>
             <br/>
-            <Route>
+            <PrivateRoute>
                 <Link to="/dashboard/media">Media</Link>
-            </Route>
+            </PrivateRoute>
             <br />
-            <Route>
+            <PrivateRoute>
                 <Link to="/dashboard/users">Users</Link>
-            </Route>
+            </PrivateRoute>
             <br />
             <a href="/">Logout</a>
         </>
