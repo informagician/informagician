@@ -27,15 +27,16 @@ router.post('/login', (req,res) => {
     console.log(userData)
     Auth.login(userData)
         .then(user => {
+            console.log('HERE',user)
             if(user && bcrypt.compareSync(userData.password, user.password)) {
                 const token = generateToken(user)
-                res.status(200).json({message:'You are logged in', token})
+                res.status(200).json(token)
             } else {
                 res.status(401).json({errorMessage: 'Invalid Username or Password'})
             }
         })
         .catch(err => {
-            res.status(500).json({errorMessage: err})
+            res.status(500).json(err)
         })
 })
 
@@ -56,5 +57,5 @@ function generateToken(user){
         expiresIn: '1h'
     }
 
-    return jwt.sign(payload, jwtsecret, options)
+    return jwt.sign(payload, process.env.secret, options)
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const Login = () => {
+const Login = props => {
 
     const [ credential, setCredential ] = useState({})
 
@@ -16,7 +16,10 @@ const Login = () => {
 
         console.log(credential)
         axios.post(process.env.REACT_APP_API + 'auth/login', credential)
-            .then(res => console.log(res))
+            .then(res => {
+                localStorage.setItem('token', res.data)
+                props.history.push('/dashboard')
+            })
             .catch(err => console.log(err))
     }
     return (
