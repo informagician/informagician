@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const restricted = require('../middleware/restricted')
 
-router.get('/', (req,res) => {
+router.get('/', restricted, (req,res) => {
     Auth.list()
         .then(users => {
             res.status(200).json(users)
@@ -12,7 +12,7 @@ router.get('/', (req,res) => {
         .catch(err => console.log(err))
 })
 
-router.post('/add', (req,res) => {
+router.post('/add', restricted, (req,res) => {
     let user = req.body
     user.password = bcrypt.hashSync(user.password, 13)
     Auth.add(user)
@@ -40,7 +40,7 @@ router.post('/login', (req,res) => {
         })
 })
 
-router.delete('/delete/:id', (req,res) => {
+router.delete('/delete/:id', restricted, (req,res) => {
     let id = req.params
 
 })

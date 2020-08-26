@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import { axiosWithAuth } from '../../../utils/axiosWithAuth'
 
 import { Editor } from '@tinymce/tinymce-react';
 
@@ -32,7 +32,7 @@ const New = () => {
     const handleSubmit = e => {
         e.preventDefault()
         console.log('submitted',article)
-        axios.post(process.env.REACT_APP_API + 'articles/new',article)
+        axiosWithAuth().post(process.env.REACT_APP_API + 'articles/new',article)
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
     }

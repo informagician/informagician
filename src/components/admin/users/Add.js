@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import { axiosWithAuth } from '../../../utils/axiosWithAuth'
 
 const Add = () => {
 
@@ -14,7 +14,7 @@ const Add = () => {
 
     const handleSubmit = () => {
         console.log(user)
-        axios.post(process.env.REACT_APP_API + 'auth/add', user)
+        axiosWithAuth().post(process.env.REACT_APP_API + 'auth/add', user)
             .then(res => console.log(res))
             .catch(err => console.log(err))
     }

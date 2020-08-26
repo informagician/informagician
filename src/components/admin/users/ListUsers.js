@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Add from './Add'
-import axios from 'axios'
+import { axiosWithAuth } from '../../../utils/axiosWithAuth'
 
 const ListUsers = () => {
 
@@ -8,14 +8,12 @@ const ListUsers = () => {
 
     useEffect(() => {
 
-        axios.get(process.env.REACT_APP_API + 'auth')
+        axiosWithAuth().get(process.env.REACT_APP_API + 'auth')
             .then(res => {
                 setList(res.data)
             })
             .catch(err => console.log(err))
     },[])
-
-    console.log(list)
 
     return (
         <>

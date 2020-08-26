@@ -31,7 +31,6 @@ const Sidebar = () => {
             </PrivateRoute>
             <br />
             <a href='/logout' onClick={handleLogout}>Logout</a>
-            {/* <input type="url" value="Logout" onClick={handleLogout} /> */}
         </>
     )
 }

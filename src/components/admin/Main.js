@@ -12,29 +12,21 @@ const Main = () => {
 
     return(
         <Switch>
-        <div className="row">
-        <Router>
-            <div className="sidebar">
-                <Sidebar />
+            <div className="row">
+                <Router>
+                    <div className="sidebar">
+                        <Sidebar />
+                    </div>
+                    <div className="main">
+                        
+                        <PrivateRoute exact path='/dashboard' component={Dashboard} />
+                        <PrivateRoute exact path='/dashboard/new-article' component={New} />
+                        <PrivateRoute path="/dashboard/media" component={Media} />
+                        <PrivateRoute path="/dashboard/users" component={ListUsers} />
+                        <Route exact path="/login" component={Login} />
+                    </div>
+                </Router>
             </div>
-            <div className="main">
-                
-                    <PrivateRoute exact path='/dashboard' component={Dashboard} />
-                        {/* <Dashboard />
-                    </PrivateRoute> */}
-                    <PrivateRoute exact path='/dashboard/new-article' component={New} />
-                        {/* <New />
-                    </PrivateRoute> */}
-                    <PrivateRoute path="/dashboard/media" component={Media} />
-                        {/* <Media />
-                    </PrivateRoute> */}
-                    <PrivateRoute path="/dashboard/users" component={ListUsers} />
-                        {/* <ListUsers />
-                    </PrivateRoute> */}
-                    <Route exact path="/login" component={Login} />
-            </div>
-        </Router>
-        </div>
         </Switch>
     )
 }

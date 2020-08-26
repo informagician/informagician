@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
 
 const Media = () => {
 
@@ -18,7 +18,7 @@ const Media = () => {
         const data = new FormData()
         data.append('file', file)
         console.log(file)
-        axios.post(process.env.REACT_APP_API + 'media', data)
+        axiosWithAuth().post(process.env.REACT_APP_API + 'media', data)
             .then(res => console.log(res))
             .catch(err => console.log(err))
     }
