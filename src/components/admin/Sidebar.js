@@ -1,8 +1,15 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import PrivateRoute from '../PrivateRoute'
 
 const Sidebar = () => {
+
+    const history = useHistory()
+
+    const handleLogout = () => {
+        localStorage.removeItem('token')
+        history.push('/login')
+    }
 
     return (
         <>
@@ -23,7 +30,8 @@ const Sidebar = () => {
                 <Link to="/dashboard/users">Users</Link>
             </PrivateRoute>
             <br />
-            <a href="/">Logout</a>
+            <a href='/logout' onClick={handleLogout}>Logout</a>
+            {/* <input type="url" value="Logout" onClick={handleLogout} /> */}
         </>
     )
 }

@@ -11,13 +11,14 @@ import Login from '../Login'
 const Main = () => {
 
     return(
-        <Router>
+        <Switch>
         <div className="row">
+        <Router>
             <div className="sidebar">
                 <Sidebar />
             </div>
             <div className="main">
-                <Switch>
+                
                     <PrivateRoute exact path='/dashboard' component={Dashboard} />
                         {/* <Dashboard />
                     </PrivateRoute> */}
@@ -31,10 +32,10 @@ const Main = () => {
                         {/* <ListUsers />
                     </PrivateRoute> */}
                     <Route exact path="/login" component={Login} />
-                </Switch>
             </div>
-        </div>
         </Router>
+        </div>
+        </Switch>
     )
 }
 
