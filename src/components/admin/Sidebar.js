@@ -8,7 +8,7 @@ const Sidebar = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('token')
-        history.push('/login')
+        history.push('/')
     }
 
     return (
@@ -30,7 +30,7 @@ const Sidebar = () => {
                 <Link to="/dashboard/users">Users</Link>
             </PrivateRoute>
             <br />
-            <a href='/logout' onClick={handleLogout}>Logout</a>
+            <a href='/' onClick={handleLogout}>Logout</a>
         </>
     )
 }
